@@ -23,7 +23,7 @@ export const appStyles = StyleSheet.create({
 
     resultContainer: {
         width: '100%',
-        height: 48,
+        // height: 48,
         padding: 15,
         alignItems: 'center',
         justifyContent: 'center',

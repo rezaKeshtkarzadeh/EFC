@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-const ECPInput = ({ title, value, setValue, placeholder = '' }) => {
+const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             <TextInput
                 placeholder={placeholder}
-                // keyboardType='phone-pad'
+                keyboardType={keyType}
                 value={value}
                 onChangeText={setValue}
                 style={styles.input}

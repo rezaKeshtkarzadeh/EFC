@@ -11,31 +11,46 @@ import { Factors } from './src/modules/EFactors';
 const App = () => {
     const [marr, setMarr] = useState(10);
     const [nTime, setNTime] = useState(5);
-    const [factors, setFactors] = useState('f/p');
+    const [factors, setFactors] = useState('pf');
     const [nFloat, setNFloat] = useState(4);
-    const [result, setResult] = useState(1.6105);
+    const [result, setResult] = useState(0.6209);
 
     const handleCalculation = () => {
         try {
             const bot = new Factors(marr, nTime, nFloat);
 
-            if (factors === 'f/p') setResult(bot.calc_fp());
-            else if (factors === 'p/f') setResult(bot.calc_pf());
+            if (factors === 'pf') setResult(bot.calc_pf());
+            else if (factors === 'fp') setResult(bot.calc_fp());
+            else if (factors === 'pa') setResult(bot.calc_pa());
+            else if (factors === 'ap') setResult(bot.calc_ap());
+            else if (factors === 'pg') setResult(bot.calc_pg());
+            else if (factors === 'gp') setResult(bot.calc_gp());
+            else if (factors === 'fa') setResult(bot.calc_fa());
+            else if (factors === 'af') setResult(bot.calc_af());
+            else if (factors === 'fg') setResult(bot.calc_fg());
+            else if (factors === 'gf') setResult(bot.calc_gf());
+            else if (factors === 'ag') setResult(bot.calc_ag());
+            else if (factors === 'ga') setResult(bot.calc_ga());
+
         } catch (error) {
-
+            console.log('Error: ', error);
         }
-
     }
 
     return (
         <ScrollView
+            keyboardDismissMode='interactive'
+            keyboardShouldPersistTaps='handled'
             showsVerticalScrollIndicator={false}
             contentContainerStyle={appStyles.container}
         >
             <StatusBar backgroundColor='transparent' animated />
             <View style={appStyles.contents}>
                 <View style={appStyles.resultContainer}>
-                    <Text style={appStyles.resultText}>{result}</Text>
+                    <Text
+                        selectable
+                        style={appStyles.resultText}
+                    >{result}</Text>
                 </View>
                 <View style={appStyles.inputsContainer}>
                     <ECPInput
@@ -43,12 +58,14 @@ const App = () => {
                         value={marr}
                         setValue={setMarr}
                         placeholder='10'
+                        keyType={'phone-pad'}
                     />
                     <ECPInput
                         title={'دوره'}
                         value={nTime}
                         setValue={setNTime}
                         placeholder='5'
+                        keyType={'phone-pad'}
                     />
                 </View>
                 <View style={appStyles.inputsContainer}>
@@ -56,13 +73,14 @@ const App = () => {
                         title={'فاکتور'}
                         value={factors}
                         setValue={setFactors}
-                        placeholder='p/f'
+                        placeholder='like: pf'
                     />
                     <ECPInput
                         title={'رقم اعشار'}
                         value={nFloat}
                         setValue={setNFloat}
                         placeholder={'4'}
+                        keyType={'phone-pad'}
                     />
                 </View>
                 <CalcBTN onPress={handleCalculation} />
