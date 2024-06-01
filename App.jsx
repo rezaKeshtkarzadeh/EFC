@@ -69,34 +69,40 @@ const App = () => {
                 </View>
                 <View style={appStyles.inputsContainer}>
                     <ECPInput
-                        title={'نرخ بهره (به درصد)'}
-                        value={marr}
-                        setValue={setMarr}
-                        placeholder='10'
-                        keyType={'phone-pad'}
-                    />
-                    <ECPInput
-                        title={'دوره'}
+                        title={'N'}
                         value={nTime}
                         setValue={setNTime}
                         placeholder='5'
                         keyType={'phone-pad'}
                     />
+                    <ECPInput
+                        title={'MARR (i%)'}
+                        value={marr}
+                        setValue={setMarr}
+                        placeholder='10'
+                        keyType={'phone-pad'}
+                    />
                 </View>
                 <View style={appStyles.inputsContainer}>
-                    <FactorsEFC
-                        title={'فاکتور'}
-                        value={factors}
-                        setValue={setFactors}
-                        placeholder='like: pf'
-                    />
                     <ECPInput
-                        title={'رقم اعشار'}
+                        title={'Decimal digit'}
                         value={nFloat}
                         setValue={setNFloat}
                         placeholder={'4'}
                         keyType={'phone-pad'}
                     />
+                    <ECPInput
+                        title={'Factors'}
+                        value={factors}
+                        setValue={setFactors}
+                        placeholder={'like: pf'}
+                    />
+                    {/* <FactorsEFC
+                        title={'Factors'}
+                        value={factors}
+                        setValue={setFactors}
+                        placeholder='like: pf'
+                    /> */}
                 </View>
                 <CalcBTN onPress={handleCalculation} />
             </View>
