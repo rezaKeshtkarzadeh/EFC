@@ -2,20 +2,20 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { dark1 } from '../customs/themes/test';
 
-const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
+const FactorsEFC = ({ title, value, setValue, placeholder = '', keyType }) => {
     return (
         <View
             style={[
                 styles.container,
                 {
-                    backgroundColor: dark1.card1
+                    backgroundColor: dark1.card2
                 }
             ]}>
             <Text
                 style={[
                     styles.title,
                     {
-                        color: dark1.text3
+                        color: dark1.text1
                     }
                 ]}>{title}</Text>
             <TextInput
@@ -27,7 +27,8 @@ const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
                 style={[
                     styles.input,
                     {
-                        backgroundColor: '#d9d9d9',
+                        // backgroundColor: '#d9d9d9'
+                        backgroundColor: dark1.fg2,
                         color: dark1.text3
                     }
                 ]}
@@ -36,7 +37,7 @@ const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
     )
 }
 
-export default ECPInput
+export default FactorsEFC;
 
 const styles = StyleSheet.create({
     container: {

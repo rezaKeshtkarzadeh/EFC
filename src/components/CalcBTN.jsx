@@ -3,11 +3,27 @@ import {
     Pressable,
     StyleSheet, Text, View
 } from 'react-native';
+import { dark1 } from '../customs/themes/test';
 
 const CalcBTN = ({ onPress }) => {
     return (
-        <Pressable style={styles.container} onPress={onPress}>
-            <Text style={styles.btnText}>محاسبه کن</Text>
+        <Pressable
+            style={[
+                styles.container,
+                {
+                    backgroundColor: dark1.primary
+                }
+            ]}
+            onPress={onPress}
+        >
+            <Text
+                style={[
+                    styles.btnText,
+                    {
+                        color: dark1.text1
+                    }
+                ]}
+            >محاسبه کن</Text>
         </Pressable>
     )
 }

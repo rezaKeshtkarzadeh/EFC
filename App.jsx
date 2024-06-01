@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import {
-    ScrollView, Text, View
-} from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { appStyles } from './src/styles/wrapper';
 import ECPInput from './src/components/ECPInput';
 import CalcBTN from './src/components/CalcBTN';
 import { Factors } from './src/modules/EFactors';
+import { dark1 } from './src/customs/themes/test';
+import FactorsEFC from './src/components/FactorsEFC';
 
 const App = () => {
     const [marr, setMarr] = useState(10);
@@ -42,14 +42,29 @@ const App = () => {
             keyboardDismissMode='interactive'
             keyboardShouldPersistTaps='handled'
             showsVerticalScrollIndicator={false}
-            contentContainerStyle={appStyles.container}
+            contentContainerStyle={[
+                appStyles.container,
+                { backgroundColor: dark1.bg3 }
+            ]}
         >
-            <StatusBar backgroundColor='transparent' animated />
+            <StatusBar style='inverted' />
             <View style={appStyles.contents}>
-                <View style={appStyles.resultContainer}>
+                <View
+                    style={[
+                        appStyles.resultContainer,
+                        {
+                            backgroundColor: dark1.card1
+                        }
+                    ]}
+                >
                     <Text
                         selectable
-                        style={appStyles.resultText}
+                        style={[
+                            appStyles.resultText,
+                            {
+                                color: dark1.text3
+                            }
+                        ]}
                     >{result}</Text>
                 </View>
                 <View style={appStyles.inputsContainer}>
@@ -69,7 +84,7 @@ const App = () => {
                     />
                 </View>
                 <View style={appStyles.inputsContainer}>
-                    <ECPInput
+                    <FactorsEFC
                         title={'فاکتور'}
                         value={factors}
                         setValue={setFactors}
