@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { dark1 } from '../customs/themes/test';
 
-const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
+const ECPInput = ({ title, value, setValue, keyType }) => {
     return (
         <View
             style={[
@@ -19,7 +19,6 @@ const ECPInput = ({ title, value, setValue, placeholder = '', keyType }) => {
                     }
                 ]}>{title}</Text>
             <TextInput
-                placeholder={placeholder}
                 placeholderTextColor={dark1.text3}
                 keyboardType={keyType}
                 value={value}
