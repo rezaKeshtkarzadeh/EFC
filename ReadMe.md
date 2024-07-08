@@ -3,7 +3,7 @@ This is a simple app for Engineering economics students. Students can use this s
 
 ---
 ### Normal users: 
-See release part to download for their device architecture. Downloading universal app is recommended.
+See release part to download for your device architecture. Downloading universal app or arm-64 is recommended.
 
 ### Pro users:
 1. Clone this repasitory to your PC.
